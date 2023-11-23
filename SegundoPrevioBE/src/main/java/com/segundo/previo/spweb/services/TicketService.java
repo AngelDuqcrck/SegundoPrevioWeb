@@ -41,9 +41,8 @@ public class TicketService {
         
     }
 
-    public List<TicketDTO> getTicketByUser(Integer userId){
-        User user = userRepository.findById(userId).orElse(null);
-        return null;
+    public List<Ticket> getTicketsByUserIdOrderedByDate(Integer userId) {
+        return ticketRepository.findByUserIdOrderByFechaRegistroDesc(userId);
     }
 
 }
